@@ -1,0 +1,27 @@
+<div class="container text-center shadow p-3 my-3 rounded">
+  <div class="h1  text-center p-3 m-3 w-80 border-bottom border-secondary">
+    <h1>Task to do: <%= @task.title.capitalize %></h1>
+  </div>
+  <div class="h3  text-center p-3 m-3">
+    <h3 class="">Description: <br><br><%= @task.details  %></h2>
+    </div>
+    <div class="icon text-center fs-5">
+      <% if @task.completed %>
+          <img src="https://media.tenor.com/7lBBaol2rlUAAAAM/trop-bien.gif" alt="" class="my-3 rounded shadow-lg">
+        <% else %>
+          <img src="https://img1.picmix.com/output/pic/normal/2/7/2/8/2878272_6fe50.gif" alt="" class="my-3 rounded shadow-lg">
+        <% end %></h4>
+  </div>
+
+  <div class="d-flex justify-content-around text-decoration-none m-3">
+    <div class="d-flex flex-column align-items-center gap-3">
+      <i class="fa-solid fa-house"></i><%= link_to "Home", tasks_path %>
+      </div>
+    <div class="d-flex flex-column align-items-center gap-3">
+      <i class="fa-regular fa-pen-to-square"></i><%= link_to "Edit", edit_task_path %>
+      </div>
+    <div class="d-flex flex-column align-items-center gap-3">
+      <i class="fa-solid fa-trash-can"></i><%= link_to "Delete", task_path(@task),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      </div>
+  </div>
+</div>

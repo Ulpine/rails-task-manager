@@ -1,0 +1,17 @@
+<h1 class="text-center shadow p-3 m-3">To do list</h1>
+  <ul class="list-group m-4">
+<% @tasks.each do |task| %>
+  <li class="list-group-item  shadow m-3">
+      <% if task.completed %>
+        <i class="fa-solid fa-square-check"></i>
+      <% else %>
+        <i class="fa-regular fa-square"></i>
+      <% end %>
+      <%= link_to task.title.capitalize, task_path(task), class: "text-decoration-none" %>
+    </li>
+<% end %>
+</ul>
+
+<div class="link m-5">
+<%= link_to "+ Add a new task", new_task_path %>
+</div>

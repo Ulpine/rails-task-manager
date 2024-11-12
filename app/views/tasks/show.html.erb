@@ -15,13 +15,19 @@
 
   <div class="d-flex justify-content-around text-decoration-none m-3">
     <div class="d-flex flex-column align-items-center gap-3">
-      <i class="fa-solid fa-house"></i><%= link_to "Home", tasks_path %>
+      <%= link_to tasks_path, class:"text-black" do %>
+          <i class="fa-solid fa-house"></i>
+        <% end %>
       </div>
     <div class="d-flex flex-column align-items-center gap-3">
-      <i class="fa-regular fa-pen-to-square"></i><%= link_to "Edit", edit_task_path %>
+      <%= link_to edit_task_path, class:"text-black" do %>
+        <i class="fa-regular fa-pen-to-square"></i>
+      <% end %>
       </div>
     <div class="d-flex flex-column align-items-center gap-3">
-      <i class="fa-solid fa-trash-can"></i><%= link_to "Delete", task_path(@task),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      <%= link_to task_path(@task), class:"text-black", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+        <i class="fa-solid fa-trash-can"></i>
+      <% end %>
       </div>
   </div>
 </div>
